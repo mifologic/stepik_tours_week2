@@ -1,0 +1,29 @@
+{% extends "tours/base.html" %}
+{% block index %}
+  <main class="container mt-3">
+    <!-- HERO -->
+    <section class="jumbotron text-center mt-4">
+      <h1 class="display-4">{{ header }}</h1>
+      <p class="lead">{{ subtitle }}</p>
+      <p class="mt-5 w-50 mx-auto">{{ description }}</p>
+    </section>
+    <!-- CARDS -->
+    <div class="row mt-5">{% for tour_id, tour_data in tours.items %}
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src="{{ tour_data.picture }}" alt="" />
+          </div>          
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tour_data.title }}</h2>
+            <p class="card-text">{{ tour_data.description|truncatechars:90 }}</p>
+            <div class="row">
+              <div class="col-9"><p>{{tour_data.date}}, {{tour_data.nights}} дней, {{tour_data.price}}&#8381</p></div>
+              <div class="col-3"><p> {{tour_data.stars}} &#9733</p></div>
+            </div>
+            <a href="/tours/{{tour_id}}/" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>{% endfor %}
+    </div>
+  </main>{% endblock %}
