@@ -13,8 +13,8 @@ SECRET_KEY = 'ima7*9^*^+yz)3#gsie%e^s-+x(=hod7#&z)y5g-y(hl+f5dp*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = ['*']
+STATIC_ROOT = 'static'
 
 # Application definition
 
