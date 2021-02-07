@@ -3,8 +3,8 @@ import random
 from django.http import HttpResponseNotFound, HttpResponseServerError
 from django.shortcuts import render
 
-from tours.data import tours
 from tours import data
+from tours.data import tours
 
 
 def main_view(request):
